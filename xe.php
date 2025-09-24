@@ -4,7 +4,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
+<<<<<<< HEAD
 $errorMsg = '';
+=======
+
+>>>>>>> b8cbe5679e1dcd4b641e82dfa239d7314641ce23
 // Thêm xe
 if (isset($_POST['add'])) {
     $maLoaiXe = $_POST['MaLoaiXe'];
@@ -12,12 +16,17 @@ if (isset($_POST['add'])) {
     $soKm = $_POST['SoKmTichLuy'];
     $ngayDK = $_POST['NgayDangKiem'];
     // Không truyền MaXe, để trigger tự sinh
+<<<<<<< HEAD
     try {
         $stmt = $pdo->prepare("INSERT INTO XE (MaLoaiXe, BienSoXe, SoKmTichLuy, NgayDangKiem) VALUES (?, ?, ?, ?)");
         $stmt->execute([$maLoaiXe, $bienSoXe, $soKm, $ngayDK]);
     } catch (PDOException $e) {
         $errorMsg = $e->getMessage();
     }
+=======
+    $stmt = $pdo->prepare("INSERT INTO XE (MaLoaiXe, BienSoXe, SoKmTichLuy, NgayDangKiem) VALUES (?, ?, ?, ?)");
+    $stmt->execute([$maLoaiXe, $bienSoXe, $soKm, $ngayDK]);
+>>>>>>> b8cbe5679e1dcd4b641e82dfa239d7314641ce23
 }
 
 // Xóa xe
@@ -36,12 +45,17 @@ if (isset($_POST['edit'])) {
     $bienSoXe = $_POST['BienSoXe'];
     $soKm = $_POST['SoKmTichLuy'];
     $ngayDK = $_POST['NgayDangKiem'];
+<<<<<<< HEAD
     try{
     $stmt = $pdo->prepare("UPDATE XE SET MaLoaiXe=?, BienSoXe=?, SoKmTichLuy=?, NgayDangKiem=? WHERE MaXe=?");
     $stmt->execute([$maLoaiXe, $bienSoXe, $soKm, $ngayDK, $ma]);
     }catch(PDOException $e) {
         $errorMsg = $e->getMessage();
     }
+=======
+    $stmt = $pdo->prepare("UPDATE XE SET MaLoaiXe=?, BienSoXe=?, SoKmTichLuy=?, NgayDangKiem=? WHERE MaXe=?");
+    $stmt->execute([$maLoaiXe, $bienSoXe, $soKm, $ngayDK, $ma]);
+>>>>>>> b8cbe5679e1dcd4b641e82dfa239d7314641ce23
 }
 
 // Lấy danh sách loại xe cho dropdown
@@ -96,7 +110,11 @@ if ($search != '') {
                         <input type="text" name="BienSoXe" class="form-control" placeholder="Biển số xe" required>
                     </div>
                     <div class="col-md-2">
+<<<<<<< HEAD
                         <input type="number" name="SoKmTichLuy" class="form-control" placeholder="Số km tích lũy" value="0" required>
+=======
+                        <input type="number" name="SoKmTichLuy" class="form-control" placeholder="Số km tích lũy" min="0" value="0" required>
+>>>>>>> b8cbe5679e1dcd4b641e82dfa239d7314641ce23
                     </div>
                     <div class="col-md-2">
                         <input type="date" name="NgayDangKiem" class="form-control" placeholder="Ngày đăng kiểm">
@@ -184,6 +202,7 @@ if ($search != '') {
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 <?php endif; ?>
 <?php if ($errorMsg): ?>
 <!-- Popup báo lỗi -->
@@ -202,4 +221,6 @@ if ($search != '') {
         </div>
     </div>
 </div>
+=======
+>>>>>>> b8cbe5679e1dcd4b641e82dfa239d7314641ce23
 <?php endif; ?>

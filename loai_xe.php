@@ -192,20 +192,21 @@ if ($search != '') {
 <?php endif; ?>
 <!-- ...existing HTML code... -->
 <?php if ($errorMsg): ?>
-<!-- Popup báo lỗi -->
-<div class="modal show" tabindex="-1" style="display:block; background:rgba(0,0,0,0.5); position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:9999;">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-danger text-white">
-                <h5 class="modal-title">Lỗi</h5>
-            </div>
-            <div class="modal-body">
-                <p><?= htmlspecialchars($errorMsg) ?></p>
-            </div>
-            <div class="modal-footer">
-                <a href="?page=loai_xe" class="btn btn-secondary">Đóng</a>
+    <!-- Popup báo lỗi -->
+    <div class="modal show" tabindex="-1"
+        style="display:block; background:rgba(0,0,0,0.5); position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:9999;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Lỗi</h5>
+                </div>
+                <div class="modal-body">
+                    <p><?= htmlspecialchars($errorMsg) ?></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="?page=loai_xe" class="btn btn-secondary">Đóng</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 <?php endif; ?>
