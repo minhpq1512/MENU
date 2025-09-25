@@ -8,7 +8,6 @@ $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 $errorMsg = '';
 =======
 
->>>>>>> b8cbe5679e1dcd4b641e82dfa239d7314641ce23
 // Thêm xe
 if (isset($_POST['add'])) {
     $maLoaiXe = $_POST['MaLoaiXe'];
