@@ -118,13 +118,14 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                     <li><a href="?page=hanh_khach">Danh mục hành khách</a></li>
                     <li><a href="?page=bang_gia">Bảng giá</a></li>
                     <li><a href="?page=chuyen_xe">Quản lý chuyến xe</a></li>
-                    <li><a href="?page=ban_ve">Bán vé</a></li>
+                    <li><a href="?page=ve">Bán vé</a></li>
                 </ul>
             </li>
             <li>
                 <button onclick="toggleMenu('submenu4')">Báo cáo</button>
                 <ul class="submenu" id="submenu4">
                     <li><a href="?page=doanh_thu">Báo cáo doanh thu</a></li>
+                    <li><a href="?page=lich_su_bao_duong">Lịch sử bảo dưỡng</a></li>
                 </ul>
             </li>
         </ul>
@@ -143,7 +144,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
                 include 'nhan_vien.php';
                 break;
             case 'phan_cong':
-                echo "<h3>Lịch phân công</h3><p>Nội dung lịch phân công...</p>";
+                include 'phan_cong.php';
                 break;
             case 'vai_tro':
                 include 'vai_tro.php';
@@ -166,11 +167,14 @@ $page = isset($_GET['page']) ? $_GET['page'] : '';
             case 'chuyen_xe':
                 include 'chuyen_xe.php';
                 break;
-            case 'ban_ve':
-                echo "<h3>Bán vé</h3><p>Nội dung bán vé...</p>";
+            case 've':
+                include 've.php';
                 break;
             case 'doanh_thu':
-                echo "<h3>Báo cáo doanh thu</h3><p>Nội dung báo cáo doanh thu...</p>";
+                include 'doanh_thu.php';
+                break;
+            case 'lich_su_bao_duong':
+                include 'lich_su_bao_duong.php';
                 break;
             default:
                 echo "<h3>Chào mừng đến hệ thống quản lý vận tải</h3><p>Chọn menu bên trái để thao tác.</p>";
